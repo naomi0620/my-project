@@ -49,8 +49,9 @@ export default class VueRouter{
             }
         })
         vue.component('router-view',{
-            render(h){
-                return h()
+            render:(h)=>{
+                const Component = this.routeMap[this.app.current].component
+                return h(Component)
             }
         })
     }
